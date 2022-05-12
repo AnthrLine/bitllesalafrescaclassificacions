@@ -43,4 +43,3 @@ def execsheetoperator():
 if __name__ == '__main__':
 	app.config['TESTING'] = True
 	app.config['TEMPLATES_AUTO_RELOAD'] = True
-	app.run()
