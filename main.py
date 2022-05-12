@@ -34,7 +34,8 @@ def individual20062009():
 
 @app.route('/execsheetoperator')
 def execsheetoperator():
-	sheet = sheetoperator.exec()
+	sheetoperator.exec()
+	time.sleep('1')
 	mainhtmloperator.exec()
 		
 	return('Que sigui el que déu vulgui :)')

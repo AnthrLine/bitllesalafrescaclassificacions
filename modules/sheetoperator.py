@@ -198,4 +198,3 @@ def exec():
 		eqf = eqf+1
 		print(eqfteams)
 	#GET THE TEAMS INFO ON THE F CATEGORY
-	return("Done")
