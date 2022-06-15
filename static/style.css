@@ -6,6 +6,10 @@ html {
 	padding: 0px;
 }
 
+a {
+   text-decoration: none;
+}
+
 body {
 	background-color: rgb(0,0,0);
 	width: 98%;
@@ -106,7 +110,7 @@ display:none;
 	margin: 0px;
 	border: 0px;
 	padding: 0px;
-	grid-area: blank;
+	grid-area: logo;
 	width: 32vw;
 }
 
@@ -114,16 +118,8 @@ display:none;
 	margin: 0px;
 	border: 0px;
 	padding: 0px;
-	grid-area: info;
+	grid-area: blank;
 	width: 32vw;
-}
-
-#infobutton {
-	background-color: dimgray;
-	border-radius: 6px;
-	margin: 0px;
-	border: 0px;
-	padding: 0px;
 }
 
 footer {
@@ -132,9 +128,38 @@ footer {
 	border: 0px;
 	padding: 0px;
 	width: 98%;
+	height: 15vw;
 	font-size: 13px;
 }
 
 .px25{
-	height: 25px;
+	height: 35px;
+}
+
+.link-spanner{
+	position: absolute;
+	top: 0;
+	right: 0; 
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+.transition-fade {
+  transition: 0.4s;
+  opacity: 1;
+	transform: translateX(0);
+	transform-origin: right;
+	
+}
+
+html.is-animating .transition-fade {
+  opacity: 1;
+	transform: translateX(100%);
+}
+
+html.is-leaving .transition-fade {
+  opacity: 0;
 }
