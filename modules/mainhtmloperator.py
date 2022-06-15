@@ -10,7 +10,7 @@ def exec():
 
 	with open(r"templates/index.html", 'w') as fp:
 		for number, line in enumerate(lines):
-			if number not in [38, 53, 68, 83, 98, 113]: #Lines that the code will delete
+			if number not in [39, 56, 73, 89, 107, 124]: #Lines that the code will delete
 				fp.write(line)
 
 
@@ -18,12 +18,12 @@ def exec():
 	with open("templates/index.html", "r") as readingfile:
 		rcontents = readingfile.readlines()		
 
-	rcontents.insert(38, sheetoperator.eqfteams[0])
-	rcontents.insert(53, sheetoperator.eqnfteams[0])
-	rcontents.insert(68, sheetoperator.indnfnames[0])
-	rcontents.insert(83, sheetoperator.indfnames[0])
-	rcontents.insert(98, sheetoperator.indpetnames[0])
-	rcontents.insert(113, sheetoperator.indgrnames[0])
+	rcontents.insert(39, sheetoperator.eqfteams[0])
+	rcontents.insert(56, sheetoperator.eqnfteams[0])
+	rcontents.insert(73, sheetoperator.indnfnames[0])
+	rcontents.insert(89, sheetoperator.indfnames[0])
+	rcontents.insert(107, sheetoperator.indpetnames[0])
+	rcontents.insert(124, sheetoperator.indgrnames[0])
 	
 
 	with open("templates/index.html", "w") as f:
