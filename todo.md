@@ -1,0 +1,5 @@
+- Create a admin panel that downloads the file with the dropbox api. [Docs](https://www.dropbox.com/developers/documentation/http/documentation#files-download)
+- Add animations
+- Add ads
+- Make it look pretty
+- Grup, Jugador, Ronda
