@@ -163,3 +163,39 @@ html.is-animating .transition-fade {
 html.is-leaving .transition-fade {
   opacity: 0;
 }
+
+.ad {
+	position: fixed;
+	width:93vw;
+	height: 93vh;
+	align-items: center;
+
+	display: grid;
+}
+
+.adimage {
+	width: 82.5vw;
+	height: 82.5vw;
+}
+
+.adelement:nth-child(1) {
+	width: 93vw;
+	height: 5vh;
+}
+
+.adelement:nth-child(2) {
+	width: 82.5vw;
+	height: 82.5vw;
+}
+
+.adelement:nth-child(3) {
+	width: 82.5vw;
+	height: 82.5vw;
+}
+
+.adelement:nth-child(4) {
+	border-radius: 50%;
+	height: 1vw;
+	width: 1vw;
+	color: white;
+}
