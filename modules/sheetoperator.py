@@ -1,25 +1,35 @@
 from openpyxl import Workbook, load_workbook
 
+individualsnf = [0]
+individualsf = [0]
+individualspet = [0]
+individualsgr = [0]
+equipsnf = [0]
+equipsf = [0]
 
 indnfnames = []
+indnfteams = []
 indnfmitjana = []
 indnfbitlles = []
 indnfpunts = []
 indnftirades = []
 
 indfnames = []
+indfteams = []
 indfmitjana = []
 indfbitlles = []
 indfpunts = []
 indftirades = []
 
 indpetnames = []
-indnpetmitjana = []
+indpetteams = []
+indpetmitjana = []
 indpetbitlles = []
 indpetpunts = []
 indpettirades = []
 
 indgrnames = []
+indgrteams = []
 indgrmitjana = []
 indgrbitlles = []
 indgrpunts = []
@@ -43,119 +53,130 @@ eqfdivendres = []
 eqftotpunts = []
 eqfbitlles = []
 
-def exec():
+def exec(inf=individualsnf, indf=individualsf, ipet=individualspet, igr=individualsgr, ef=equipsf, enf=equipsnf):
 
 	#WE LOAD THE WB EVERY TIME SO IT GETS UPDATED WITH THE NEW RESULTS
+	workbook = ""
+	sheet = ""
+	
 	workbook = load_workbook(filename="Web.xlsx", data_only=True)
 	sheet = workbook.active
 
 	#GET THE NUMBER OF CANDIDATES/TEAMS
-	individualsnf = sheet["A1"].value
-	individualsf = sheet["B1"].value
-	individualspet = sheet["C1"].value
-	individualsgr = sheet["D1"].value
-	equipsnf = sheet["E1"].value
-	equipsf = sheet["F1"].value
+	inf.insert(0, sheet["A1"].value)
+	indf.insert(0, sheet["B1"].value)
+	ipet.insert(0, sheet["C1"].value)
+	igr .insert(0, sheet["D1"].value)
+	enf.insert(0, sheet["E1"].value)
+	ef.insert(0, sheet["F1"].value)
 	#GET THE NUMBER OF CANDIDATES/TEAMS
 
 
 	#GET THE NAMES OF THE NF CATEGORY
 	
-	inf = 1 #Starting pos. is on one to match sheet
+	infi = 1 #Starting pos. is on one to match sheet
 	
-	while inf <= individualsnf:
+	while infi <= inf[0]:
 
-		c1 = "B" + str(inf+1)
-		c2 = "C" + str(inf+1)
-		c3 = "D" + str(inf+1)
-		c4 = "E" + str(inf+1)
-		c5 = "F" + str(inf+1)
+		c1 = "B" + str(infi+1)
+		c2 = "C" + str(infi+1)
+		c3 = "D" + str(infi+1)
+		c4 = "E" + str(infi+1)
+		c5 = "F" + str(infi+1)
+		c6 = "G" + str(infi+1)
 		
 		indnfnames.append(sheet[c1].value)
-		indnfmitjana.append(sheet[c2].value)
-		indnfbitlles.append(sheet[c3].value)
-		indnfpunts.append(sheet[c4].value)
-		indnftirades.append(sheet[c5].value)
+		indnfteams.append(sheet[c2].value)
+		indnfmitjana.append(sheet[c3].value)
+		indnfbitlles.append(sheet[c4].value)
+		indnfpunts.append(sheet[c5].value)
+		indnftirades.append(sheet[c6].value)
 		
-		inf = inf + 1
+		infi += 1
 
 	#GET THE NAMES OF THE NF CATEGORY
 
 	#GET THE NAMES OF THE F CATEGORY
 	
-	indf = individualsnf + 1 
+	indfi = inf[0] + 1 
 	
-	while indf <= individualsnf+individualsf:
-		c1 = "B" + str(indf+1)
-		c2 = "C" + str(indf+1)
-		c3 = "D" + str(indf+1)
-		c4 = "E" + str(indf+1)
-		c5 = "F" + str(indf+1)
+	while indfi <= inf[0]+indf[0]:
+		c1 = "B" + str(indfi+1)
+		c2 = "C" + str(indfi+1)
+		c3 = "D" + str(indfi+1)
+		c4 = "E" + str(indfi+1)
+		c5 = "F" + str(indfi+1)
+		c6 = "G" + str(indfi+1)
 	
 		indfnames.append(sheet[c1].value)
-		indfmitjana.append(sheet[c2].value)
-		indfbitlles.append(sheet[c3].value)
-		indfpunts.append(sheet[c4].value)
-		indftirades.append(sheet[c5].value)
+		indfteams.append(sheet[c2].value)
+		indfmitjana.append(sheet[c3].value)
+		indfbitlles.append(sheet[c4].value)
+		indfpunts.append(sheet[c5].value)
+		indftirades.append(sheet[c6].value)
 	
-		indf = indf+1
+		indfi += 1
 	#GET THE NAMES OF THE F CATEGORY
 
 	#GET THE NAMES OF THE PET CATEGORY
 	
-	indpet = individualsnf+individualsf + 1 
+	indpeti = inf[0]+indf[0] + 1 
 	
-	while indpet <= individualsnf+individualsf+individualspet:
-		c1 = "B" + str(indpet+1)
-		c2 = "C" + str(indpet+1)
-		c3 = "D" + str(indpet+1)
-		c4 = "E" + str(indpet+1)
-		c5 = "F" + str(indpet+1)
+	while indpeti <= inf[0]+indf[0]+ipet[0]:
+		c1 = "B" + str(indpeti+1)
+		c2 = "C" + str(indpeti+1)
+		c3 = "D" + str(indpeti+1)
+		c4 = "E" + str(indpeti+1)
+		c5 = "F" + str(indpeti+1)
+		c6 = "G" + str(indpeti+1)
 	
 		indpetnames.append(sheet[c1].value)
-		indnpetmitjana.append(sheet[c2].value)
-		indpetbitlles.append(sheet[c3].value)
-		indpetpunts.append(sheet[c4].value)
-		indpettirades.append(sheet[c5].value)
+		indpetteams.append(sheet[c2].value)
+		indpetmitjana.append(sheet[c3].value)
+		indpetbitlles.append(sheet[c4].value)
+		indpetpunts.append(sheet[c5].value)
+		indpettirades.append(sheet[c6].value)
 	
-		indpet = indpet+1
+		indpeti += 1
 	#GET THE NAMES OF THE PET CATEGORY
 
 	#GET THE NAMES OF THE GR CATEGORY
 	
-	indgr = individualsnf+individualsf+individualspet + 1 
+	indgri = inf[0]+indf[0]+ipet[0] + 1 
 	
-	while indgr <= individualsnf+individualsf+individualspet+individualsgr:
-		c1 = "B" + str(indgr+1)
-		c2 = "C" + str(indgr+1)
-		c3 = "D" + str(indgr+1)
-		c4 = "E" + str(indgr+1)
-		c5 = "F" + str(indgr+1)
+	while indgri <= inf[0]+indf[0]+ipet[0]+igr[0]:
+		c1 = "B" + str(indgri+1)
+		c2 = "C" + str(indgri+1)
+		c3 = "D" + str(indgri+1)
+		c4 = "E" + str(indgri+1)
+		c5 = "F" + str(indgri+1)
+		c5 = "G" + str(indgri+1)
 		
 	
 		indgrnames.append(sheet[c1].value)
-		indgrmitjana.append(sheet[c2].value)
-		indgrbitlles.append(sheet[c3].value)
-		indgrpunts.append(sheet[c4].value)
-		indgrtirades.append(sheet[c5].value)
+		indgrteams.append(sheet[c2].value)
+		indgrmitjana.append(sheet[c3].value)
+		indgrbitlles.append(sheet[c4].value)
+		indgrpunts.append(sheet[c5].value)
+		indgrtirades.append(sheet[c6].value)
 		
-		indgr = indgr+1
+		indgri += 1
 	#GET THE NAMES OF THE GR CATEGORY
 
 	#GET THE TEAMS INFO ON THE NF CATEGORY
 
-	eqnf = individualsnf+individualsf+individualspet+individualsgr + 1 
+	eqnfi = inf[0]+indf[0]+ipet[0]+igr[0] + 1 
 
 
-	while eqnf <= individualsnf+individualsf+individualspet+individualsgr+equipsnf:
-		c1 = "B" + str(eqnf+1)
-		c2 = "C" + str(eqnf+1)
-		c3 = "D" + str(eqnf+1)
-		c4 = "E" + str(eqnf+1)
-		c5 = "F" + str(eqnf+1)
-		c6 = "G" + str(eqnf+1)
-		c7 = "H" + str(eqnf+1)
-		c8 = "I" + str(eqnf+1)
+	while eqnfi <= inf[0]+indf[0]+ipet[0]+igr[0]+enf[0]:
+		c1 = "B" + str(eqnfi+1)
+		c2 = "C" + str(eqnfi+1)
+		c3 = "D" + str(eqnfi+1)
+		c4 = "E" + str(eqnfi+1)
+		c5 = "F" + str(eqnfi+1)
+		c6 = "G" + str(eqnfi+1)
+		c7 = "H" + str(eqnfi+1)
+		c8 = "I" + str(eqnfi+1)
 	
 		eqnfteams.append(sheet[c1].value)
 		eqnfdilluns.append(sheet[c2].value)
@@ -166,25 +187,25 @@ def exec():
 		eqnftotpunts.append(sheet[c7].value)
 		eqnfbitlles.append(sheet[c8].value)
 		
-		eqnf = eqnf+1
+		eqnfi += 1
 	
 	#GET THE TEAMS INFO ON THE NF CATEGORY
 	
 	#GET THE TEAMS INFO ON THE F CATEGORY
 
-	eqf = individualsnf+individualsf+individualspet+individualsgr+equipsnf + 1 
+	eqfi = inf[0]+indf[0]+ipet[0]+igr[0]+enf[0] + 1 
 
 
 
-	while eqf <= individualsnf+individualsf+individualspet+individualsgr+equipsnf+equipsf:
-		c1 = "B" + str(eqf+1)
-		c2 = "C" + str(eqf+1)
-		c3 = "D" + str(eqf+1)
-		c4 = "E" + str(eqf+1)
-		c5 = "F" + str(eqf+1)
-		c6 = "G" + str(eqf+1)
-		c7 = "H" + str(eqf+1)
-		c8 = "I" + str(eqf+1)
+	while eqfi <= inf[0]+indf[0]+ipet[0]+igr[0]+enf[0]+ef[0]:
+		c1 = "B" + str(eqfi+1)
+		c2 = "C" + str(eqfi+1)
+		c3 = "D" + str(eqfi+1)
+		c4 = "E" + str(eqfi+1)
+		c5 = "F" + str(eqfi+1)
+		c6 = "G" + str(eqfi+1)
+		c7 = "H" + str(eqfi+1)
+		c8 = "I" + str(eqfi+1)
 	
 		eqfteams.append(sheet[c1].value)
 		eqfdilluns.append(sheet[c2].value)
@@ -195,6 +216,10 @@ def exec():
 		eqftotpunts.append(sheet[c7].value)
 		eqfbitlles.append(sheet[c8].value)
 		
-		eqf = eqf+1
+		eqfi += 1
 	#GET THE TEAMS INFO ON THE F CATEGORY
 	return("Done")
+
+
+def check():
+	print (equipsnf)
