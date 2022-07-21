@@ -1,34 +1,22 @@
-window.addEventListener('load', function () {
-	const equipsfederats = document.getElementById("equipsfederats")
-	const equipsnofederats = document.getElementById("equipsnofederats")
-	const individualnofederats = document.getElementById("individualnofederats")
-	const individualfederats = document.getElementById("individualfederats")
-	const individual20102014 = document.getElementById("individual20102014")
-	const individual20062009 = document.getElementById("individual20062009")
+//import Swup from 'swup';
+//const swup = new Swup();
 
-	equipsfederats.onclick = function () {
-		window.location.replace("http://bitllesalafresca.anthrline.repl.co/equipsfederats");
-	}
+let details = navigator.userAgent;
+let regexp = /android|iphone|kindle|ipad/i;
+let isMobileDevice = regexp.test(details);
+if (isMobileDevice) {
+} else {
+    alert('Aquesta web és només per a mòbils, sentim les molèsties.')
+	window.location.replace("https://google.com");
+}
 
-	equipsnofederats.onclick = function () {
-		window.location.replace("http://bitllesalafresca.anthrline.repl.co/equipsnofederats");
-	}	
-
-	individualnofederats.onclick = function () {
-		window.location.replace("http://bitllesalafresca.anthrline.repl.co/individualnofederats");
-	}
-
-	individualfederats.onclick = function () {
-		window.location.replace("http://bitllesalafresca.anthrline.repl.co/individualfederats");
-	}
-
-	individual20102014.onclick = function () {
-		window.location.replace("http://bitllesalafresca.anthrline.repl.co/individual20102014");
-	}
-
-	individual20062009.onclick = function () {
-		window.location.replace("http://bitllesalafresca.anthrline.repl.co/individual20062009");
-	}
-
-	
-})
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker
+  .register('../sw.js')
+  .then(function() {
+    console.log("Service Worker registered successfully");
+  })
+  .catch(function() {
+    console.log("Service worker registration failed")
+  });
+}
