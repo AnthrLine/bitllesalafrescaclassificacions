@@ -217,7 +217,6 @@ h1 {
 }
 
 header {
-	background-color: rgb(0,0,0);
 	display: grid;
 	grid-template-areas: "logo h1";
  	gap: 0px;
@@ -227,7 +226,7 @@ header {
 	align-items: center;
 	width: 98%;
 }
-
+	
 .headercolumn:nth-child(1) {
 	margin: 0px;
 	border: 0px;
@@ -259,7 +258,6 @@ footer {
     bottom: 0;
 	display: grid;
 	align-items: center;
-	background-color: black;
 }
 
 #tomenu {
@@ -302,4 +300,154 @@ html.is-leaving .transition-fade {
 
 .hidden{
 display:none;
+}
+
+.ad {
+	position: fixed;
+	width:93vw;
+	height: 93vh;
+
+	margin: 0px;
+	border: 0px;
+	gap: 0px;
+	padding: 0px;
+
+	display: grid;
+	align-items: center;
+	z-index: -2;
+	animation-name: hide;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-delay: 6.5s;
+	transform: translateY(-25vw);
+}
+
+.adimage {
+	width: 45vh;
+	height: 45vh;
+	z-index: -2;
+}
+
+.adlogo{
+	width: 65px;
+	height: 65px;
+	filter: invert(100%);
+	z-index: -2;
+}
+
+.adelement:nth-child(1) {
+	width: 65px;
+	height: 65px;
+	margin:0px auto;
+	left:0;
+	right:0;
+	animation-name: bitadlogo;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+	animation-delay: 1.2s;
+	-webkit-transition: cubic-bezier(1, -0.06, 0.7, 1.12);
+	transition: cubic-bezier(1, -0.06, 0.7, 1.12);
+	z-index: -2;
+}
+
+.adelement:nth-child(2) {
+	margin:0px auto;
+	left:0;
+	right:0;
+
+	height: 0vh;
+	transform: translate(70vw, -63px);
+	animation-name: patrocinadorstext;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+	animation-delay: 1.4s;
+	-webkit-transition: cubic-bezier(1, -0.06, 0.7, 1.12);
+	transition: cubic-bezier(1, -0.06, 0.7, 1.12);
+	z-index: -2;
+}
+
+#patrocinadorstxt {
+	font-size: 19px;
+	z-index: -2;
+}
+
+.adelement:nth-child(3) {
+	width: 43vh;
+	height: 43vh;
+	margin:0px auto;
+	left:0;
+	right:0;
+	z-index: -2;
+}
+
+.adelement:nth-child(4) {
+	width: 43vh;
+	height: 43vh;
+	margin:0px auto;
+	left:0;
+	right:0;
+	z-index: -2;
+}
+
+.adelement:nth-child(5) {
+	border-radius: 50%;
+	height: 50px;
+	width: 50px;
+	background: white;
+	margin:0px auto;
+	left:0;
+	right:0;
+	z-index: -1;
+	transform: translateY(50px);
+	animation-name: circle;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+	animation-delay: 5s;
+}
+
+.notad {
+	animation-name: notad;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-delay: 7s;
+	transform: scale(0%);
+	opacity: 0;
+	background-color: hsla(0, 50%, 50%, 0) !important;
+	bottom: 0;
+}
+
+@keyframes bitadlogo {
+	100% {
+		transform: translateX(-36.3vw);
+	}
+}
+
+@keyframes patrocinadorstext {
+	100% {
+		transform: translate(-30px, -63px);
+	}
+}
+
+@keyframes circle {
+	100% {
+		transform: scale(10000%);
+	}
+}
+
+@keyframes notad {
+	0% {
+		transform: scale(100%);
+		opacity: 0;
+	}
+	100% {	
+		transform: scale(100%);
+		opacity: 1;
+	}
+}
+
+@keyframes hide {
+	100% {
+		opacity: 0;
+		display: none;
+	}
 }
